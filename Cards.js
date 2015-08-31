@@ -1,0 +1,1 @@
+MTGCards = new Mongo.Collection(mtg_cards);

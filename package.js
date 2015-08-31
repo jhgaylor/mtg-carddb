@@ -12,7 +12,12 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
+  api.use('mtg:json');
+  api.addFiles('Card.js');
+  api.addFiles('Cards.js');
   api.addFiles('carddb.js');
+  api.export('MTGCard');
+  api.export('MTGCards');
 });
 
 Package.onTest(function(api) {

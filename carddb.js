@@ -1,1 +1,1 @@
-// Write your package code here!
+// Make the DB from MTGjson

@@ -84,6 +84,20 @@ MTGCards = new Mongo.Collection('mtg_cards');
 
 MTGCards.attachSchema(MTGCardSchema);
 
-MTGCards.helpers({
+// set_name is a 3 character code
+MTGCards.set = function (set_name, selector, options) {
+  // set the default selector
+  selector = selector || {};
+  // set the default options object if it isn't set
+  options = options || {};
 
-});
+  // extend the selector with the desired set
+  selector = _(selector).extend({
+    set: set_name
+  });
+
+  // return a cursor for MTGCards
+  return MTGCards.find(selector, options);
+};
+
+MTGCards.helpers({});

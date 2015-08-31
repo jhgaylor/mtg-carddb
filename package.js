@@ -12,11 +12,16 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
+  api.use('mongo');
+  api.use('underscore');
+  api.use('aldeed:collection2@2.5.0');
+  api.use('aldeed:simple-schema');
+  api.use('dburles:collection-helpers@1.0.0');
   api.use('mtg:json');
-  api.addFiles('Card.js');
   api.addFiles('Cards.js');
   api.addFiles('carddb.js');
   api.export('MTGCard');
+  api.export('MTGCardSchema');
   api.export('MTGCards');
 });
 
